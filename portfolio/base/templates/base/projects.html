@@ -1,0 +1,31 @@
+{% extends 'base/main.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<section class=" projectcomponent">
+    <div class="project-container">
+    <h1>my projects</h1>
+
+    
+    <div class="projects">
+        {% for project in projects %}
+        <a href="{% url 'project' project.id %}">
+        <div class="project">
+            <img src="{{project.image.url}}" alt="">
+            <h2> {{project.title}}</h2>
+           
+
+        </div>
+    </a>
+        {% endfor %}
+       
+    </div>
+</div>
+
+</section>
+
+
+
+{% endblock %}

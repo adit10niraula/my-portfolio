@@ -1,0 +1,22 @@
+{% extends "base/main.html" %}
+{% load static %}
+
+{% block content %}
+
+
+<div class="components">
+    <a href="{% url 'editproject' product.id %}"> edit </a>
+    <h1> {{product.title}} </h1>
+    <img src="{{product.image.url}}" alt="" />
+    <p>{{product.body|safe}}  </p>
+    <p> {{product.created}}  </p>
+
+
+
+</div>
+
+
+
+
+
+{% endblock %}

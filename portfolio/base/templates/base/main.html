@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>Razz Protfolio</title>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <div class="nav-logo">
+                <p>Raj Kumar</p>
+
+            </div>
+            <div class="nav-menu">
+                <p class="cross"><i class="fa-solid fa-xmark"></i></p>
+                <ul class="nav-item">
+                    
+                    <li class="active">Home</li>
+                    <li class="active">projects</li>
+                    <li>contacts</li>
+                    <li>about</li>
+                    <li>message</li>
+                </ul>
+
+            </div>
+
+            <div class="bars">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <div class="nav-user">
+
+                <ul class="nav-item">
+                    <li>inbox</li>
+                    <li> <a href="{% url 'addproject' %}">Add project</a></li>
+                </ul>
+
+            </div> 
+        </div>
+    </nav>
+
+    {% block content %}
+
+
+    {% endblock %}
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-left footers">
+                <h1>Raj Kumar</h1>
+                <p>raj kumar khatri</p>
+                <p>katunje 5 suryabinayak</p>
+                
+
+            </div> 
+            <div class="footer-center footers">
+                <h2>Contact Me</h2>
+                <p> email: razzkumar115@gmail.com</p>
+                <p>phone: 9803885481</p>
+                <p>phone: 9741813256</p>
+
+                
+
+            </div>
+            <div class="footer-right footers">
+
+                <h2>socila links</h2>
+                <p>facebook</p>
+                <p>linkedin</p>
+                <p>twitter</p>
+                <p>github</p>
+
+
+            </div>
+        </div>
+        <p>copyright © 2024 all right reserved</p>
+    </footer>
+
+
+</body>
+</html>

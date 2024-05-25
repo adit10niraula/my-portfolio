@@ -1,0 +1,136 @@
+{% extends "base/main.html" %}
+{% load static %}
+{% block content %}
+
+
+    <section class="components">
+        <div class="hero">
+            <div class="hero-info">
+                <h1>Full Stack <br> <span>Developer</span> </h1>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad necessitatibus adipisci obcaecati iste non architecto cumque nulla molestiae animi ut, iure consequatur dolores. Quam, natus.</p>
+                <div class="call-buttons">
+                    <button class="btn1">call me</button>
+                    <button>my work</button>
+                </div>
+                <div class="social-media-icon">
+                    <ul>
+                        <li><i class="fa-brands fa-facebook"></i></li>
+                        <li><i class="fa-brands fa-linkedin"></i></li>
+                        <li><i class="fa-brands fa-twitter"></i></li>
+                        <li><i class="fa-brands fa-github"></i></li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="hero-img">
+                <img src="{% static 'img/me.png' %}" alt="">
+
+            </div>
+        
+        </div>
+    </section>
+
+    <section class="components">
+        <div class="specilist">
+            <h2>specialities</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia sed esse eligendi laborum voluptatibus amet repellendus hic possimus repellat deserunt ipsam nemo mollitia, molestiae tempore illum placeat iure minima aliquam?</p>
+            
+        </div>
+
+    </section>
+
+    <section class="components">
+        <div class="main-skill">
+            <div class="product-design skill-container">
+                <h2>product design</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem repudiandae nesciunt aut ad animi iste!</p>
+
+            </div>
+            <div class="frontend skill-container">
+                <h2>frontend</h2>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem eos magni voluptatibus animi ipsa nobis?</p>
+
+            </div>
+            <div class="backend skill-container">
+                <h2>backend</h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil sunt et ratione tempore nisi perferendis.</p>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="components">
+        <div class="language-skills">
+            <h1>skills</h1>
+
+            {% for skill in skills %}
+
+            {% if skill.body%}
+
+            <div class="language-skill">
+                <h3>{{skill.title}}</h3>
+                <p>{{skill.body}}</p>
+            </div>
+            {% else %}
+
+            
+           
+            <div class="language-skill-container">
+                <p>{{skill.title}}</p>
+               
+            </div>
+            {% endif %}
+            {% endfor %}
+            
+
+            
+        </div>
+
+    </section>
+
+    <section class=" projectcomponent">
+        <div class="project-container">
+        <h1>my projects</h1>
+
+        
+        <div class="projects">
+            {% for project in projects %}
+            <a href="{% url 'project' project.id %}">
+            <div class="project">
+                <img src="{{project.image.url}}" alt="">
+                <h2> {{project.title}}</h2>
+               
+
+            </div>
+        </a>
+            {% endfor %}
+           
+        </div>
+    </div>
+
+    </section>
+
+    <section class="components">
+        <div class="send-message">
+            <h2>Get In Touch</h2>
+            <label for="naem">name</label>
+            <br>
+            <input type="text" >
+            <br>
+            <label for="email">email</label>
+            <br>
+            <input type="email" name="email" id="">
+            <br>
+
+            <label for="message">message</label>
+            <br>
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+            <button type="submit">Send Message</button>
+        </div>
+    </section>
+
+    
+
+
+
+{% endblock %}
