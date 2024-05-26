@@ -34,15 +34,24 @@
                 <i class="fa-solid fa-bars"></i>
             </div>
             <div class="nav-user">
-
+                {% if request.user.is_authenticated %}
                 <ul class="nav-item">
                     <li>inbox</li>
+
                     <li> <a href="{% url 'addproject' %}">Add project</a></li>
                 </ul>
+                {% endif %}
 
             </div> 
         </div>
     </nav>
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
 
     {% block content %}
 

@@ -113,7 +113,11 @@
     <section class="components">
         <div class="send-message">
             <h2>Get In Touch</h2>
-            <label for="naem">name</label>
+            <form method="POST" >
+                {% csrf_token %}
+
+            {{form.as_p}}
+             {% comment %} <label for="naem">name</label>
             <br>
             <input type="text" >
             <br>
@@ -124,8 +128,10 @@
 
             <label for="message">message</label>
             <br>
-            <textarea name="" id="" cols="30" rows="10"></textarea>
-            <button type="submit">Send Message</button>
+            <textarea name="" id="" cols="30" rows="10"></textarea> {% endcomment %}
+            
+            <button type="submit">Send Message</button> 
+            <form/>
         </div>
     </section>
 

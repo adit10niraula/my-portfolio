@@ -253,7 +253,7 @@
     font-size: 30px;
 
 }
-.send-message input, textarea{
+.send-message .input_form, textarea{
     width: 100%;
     margin: 10px 0;
     outline:  none;
