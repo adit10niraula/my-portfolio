@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
-from .models import Projects, Skill, Tags
-from .forms import ProjectsModel
+from .models import Projects, Skill, Tags,Message
+from .forms import ProjectsModel,MessageForm
+from django.contrib import messages
 
 # Create your views here.
 
@@ -8,7 +9,20 @@ def home(request):
     projects = Projects.objects.all()
     skills = Skill.objects.all()
 
-    context = {"projects":projects, "skills":skills}
+    form = MessageForm()
+    if request.method == "POST":
+        form = MessageForm(request.POST)
+        if form.is_valid():
+            form.save()
+            
+
+            messages.success(request, "your message was succesfully send") 
+            form = MessageForm()   
+
+           
+
+    
+    context = {"projects":projects, "skills":skills, "form":form}
 
 
     return render(request, "base/home.html", context)
@@ -59,5 +73,15 @@ def edit_projects(request, pk):
 
     context = {"form":form}
     return render(request, 'base/add_project.html', context)
+
+
+
+def inbox(request):
+
+    messages = Message.objects.all().order_by('is_read')
+    unread = Message.objects.filter(is_read = False).count()
+    context = {"messages": messages, 'unread':unread}
+    return render(request, 'base/inbox.html', context)
+
 
     
