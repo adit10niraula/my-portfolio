@@ -1,0 +1,28 @@
+{% extends 'base/main.html' %}
+{% load static %}
+
+{% block content %}
+
+<h1>  MY messages </h1>
+
+<div class ="message container">
+   <p> {{unread}} message unread</p>
+    {% for message in messages %}
+
+    <div class="message">
+        <h2> {{message.name}} </h2>
+        <p>{{message.body}}</p>
+        <p> {{message.email}}</p>
+        <p> {{message.subject}}</p>
+        <p>{{message.created}}</p>
+
+    {% endfor %}
+
+
+    </div>
+
+
+</div>
+
+
+{% endblock %}
