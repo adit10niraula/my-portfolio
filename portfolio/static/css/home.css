@@ -5,6 +5,10 @@
     box-sizing: border-box;
     font-family: "Outfit", sans-serif;
 }
+a{
+    text-decoration: none;
+    color:black;
+}
 
 .nav-container{
     
@@ -17,6 +21,7 @@
     font-size: 20px;
     text-transform: capitalize;
     font-weight: 600;
+    cursor: pointer;
     
 }
 
@@ -28,6 +33,7 @@
 .nav-item li{
     list-style: none;
     font-size:18px;
+    cursor: pointer;
 
 }
 
@@ -218,13 +224,16 @@
 
 .projects{
     display: flex;
-    flex-wrap: wrap;
-    gap:50px;
-    justify-content: center;
 
-    align-items: center;
+   gap:50px;
+   align-items: center;
+   padding: 30px;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
 }
-
+.projects::-webkit-scrollbar {
+    display: none; /* Hide scrollbar */
+}
 .project img{
     width: 320px;
     height: 220px;
@@ -314,6 +323,16 @@ footer{
     padding: 5px 0;
     
 }
+
+.skill-title{
+    display: flex;
+}
+
+.footers i{
+    color: white;
+    margin-left: 5px;
+}
+
 
 
 
@@ -441,10 +460,18 @@ footer{
         position: absolute;
         top:0;
         right:0;
-        width:200px;
+        width:0px;
+        display: none;
         height: 100vh;
         background-color: rgb(177, 173, 173);
+        transition: all 0.3s ease;
         
+    }
+   .hide{
+        display: none;
+    }
+    .show{
+        display:block;
     }
     .nav-menu .nav-item{
         display: flex;
@@ -457,6 +484,9 @@ footer{
     }
     .bars{
         display: block;
+        position: absolute;
+        top:20px;
+        right:20px;
     }
 
 }

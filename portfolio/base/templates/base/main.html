@@ -17,22 +17,26 @@
                 <p>Raj Kumar</p>
 
             </div>
-            <div class="nav-menu">
-                <p class="cross"><i class="fa-solid fa-xmark"></i></p>
+            <div class ="nav-co">
+            <div class=" nav-menu" id="nav-menu">
+                <p class="cross" id="hide-nav"><i class="fa-solid fa-xmark"></i></p>
                 <ul class="nav-item">
                     
-                    <li class="active">Home</li>
-                    <li class="active">projects</li>
-                    <li>contacts</li>
-                    <li>about</li>
-                    <li>message</li>
+                    <li> <a href="{% url 'home' %}">Home</a></li>
+                    
+                    <li><a href="#contact">contacts</a></li>
+                    <li><a href="#about">about</a></li>
+                    <li><a href="#message">message</a></li>
+                    <li > <a href="#project">projects</a></li>
                 </ul>
 
             </div>
-
-            <div class="bars">
+            </div>
+         
+            <div class="bars" id="show-nav">
                 <i class="fa-solid fa-bars"></i>
             </div>
+       
             <div class="nav-user">
                 {% if request.user.is_authenticated %}
                 <ul class="nav-item">
@@ -76,13 +80,13 @@
                 
 
             </div>
-            <div class="footer-right footers">
+            <div class="footer-right footers" id="contact">
 
-                <h2>socila links</h2>
-                <p>facebook</p>
-                <p>linkedin</p>
-                <p>twitter</p>
-                <p>github</p>
+                <h2>Social links</h2>
+                <p>Facebook <a href="https://www.facebook.com/profile.php?id=100090196136920"><i class="fa-brands fa-facebook"></a></i></p>
+                <p>Linkedin <a href="https://www.linkedin.com/in/raj-kumar-51096b224/" ><i class="fa-brands fa-linkedin"></i></a></p>
+                <p>Instagram<a href="https://www.instagram.com/its__rajkumar/"><i class="fa-brands fa-square-instagram"></i></a></p>
+                <p>Github<a href="https://github.com/adit10niraula"><i class="fa-brands fa-github"></i></a></p>
 
 
             </div>
@@ -90,6 +94,7 @@
         <p>copyright © 2024 all right reserved</p>
     </footer>
 
+    <script src="{% static 'js/script.js' %}"></script>
 
 </body>
 </html>
